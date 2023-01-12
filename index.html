@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./Assets/css/reset.css">
-    <link rel="stylesheet" href="./Assets/css/style.css">
-    
-    <title>Project 1</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="./Assets/css/reset.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./Assets/css/style.css" />
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
 
-<body>
-    <header>
-       
-    </header>
+    <title>QuickRecipe</title>
+  </head>
 
-    <div>
+  <body>
+    <div id="page-container" class="min-vh-100 flex-center items-center">
+      <div id="welcome-card" class="card text-center mb-3 py-12">
+        <div id="card-body">
+          <h1 class="text-2xl">QuikRecipe</h1>
+          <input type="search" name="" id="" />
+        </div>
+      </div>
 
-        <section class="container">
-            <!-- search bar -->
-        </section>
 
-        <section class="btn">
-            <!-- submit button -->
-        </section>
 
     </div>
 
-    <footer>
-        <p>Contributors: Connor Bodin, Myeonghun Jeong, Wiley Vincent</p>
-    </footer>
-
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./Assets/javascripts/script.js"></script>
-</body>
 
+    <script src="./Assets/javascripts/script.js"></script>
+  </body>
 </html>
