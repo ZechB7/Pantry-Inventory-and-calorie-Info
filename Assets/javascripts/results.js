@@ -15,9 +15,10 @@ result.forEach((recipe) => {
   console.log(recipeIngredients);
 });
 
-document.getElementById('site-search').addEventListener('keypress', function (e) {
-  if (e.key === 'enter'){
-  e.preventDefault();
+$('#site-search').keypress(function(event){
+  var keycode = (event.keyCode ? event.keyCode : event.which);
+  if(keycode == '13'){
+  event.preventDefault();
 
   var recipeSearch = $("#site-search").val();
 
@@ -37,7 +38,7 @@ document.getElementById('site-search').addEventListener('keypress', function (e)
       // Store data
       localStorage.setItem("recipe", JSON.stringify(result));
       // do something with the result here
-      // window.location.href = "../../results.html";
+      window.location.href = "../../results.html";
     })
     .catch((error) => {
       console.error("Error: ", error);
