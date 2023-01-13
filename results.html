@@ -26,24 +26,22 @@
 
   <body>
 
-    <div>
-      <div>
-        <nav>
+    <div class="grid md:grid-cols-6">
+      <div class="col-span-1">
+        <nav >
           <div>
-            <h1>
-              <a href="/">QuikRecipe</a>
+            <h1 class="font-bold uppercase p-4 border-b border-gray-200">
+              <a href="/" class="text-blue-600 sm:text-blue-400 ">QuikRecipe</a>
             </h1>
           </div>
           <ul>
             <li>
-              <a href="#">
+              <a href="./index.html">
                 <span>Home</span>
               </a>
             </li>
-            <li>
-              <a href="#">
-                <span>About</span>
-              </a>
+            <li class="pt-5 pb-5 pl-1">
+            <input type="search" id="site-search" name="q" placeholder="Search for new recipe!" class="rounded">
             </li>
             <li>
               <a href="#">
@@ -54,34 +52,58 @@
         </nav>
       </div>
     
-      <main>
-        <div>
-          <a href="#">Log in</a>
-          <a href="#">Sign up</a>
+      <main class="px-16 py-6 md:col-span-5">
+        <div class="flex justify-center md:justify-end">
+          <a href="#" class="">Log in</a>
+          <a href="#" class="ml-2">Sign up</a>
         </div>
   
         <header>
-          <h2>Recipes</h2>
-          <h3>For Ninjas</h3>
+          <h2 class="text-6xl">Recipes</h2>
+          
         </header>
   
         <div>
-          <h4>Latest Recipes</h4>
+          <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Latest Recipes</h4>
     
-          <div>
+          <div class="mt-8 grid lg:grid-cols-3 gap-10">
             <!-- cards go here -->
-            <div> 
-              <img src="img/stew.jpg" alt="stew">
-              <div>
-                <span>5 Bean Chili Stew</span>
-                <span>Recipe by Mario</span>
+            <div class="bg-white rounded overflow-hidden shadow-md relative"> 
+              <img src="./Assets/images/taco.jpg" alt="tacos" class="w-full h-32 sm:h-48 object-cover" >
+              <div class="m-4">
+                <span class="font-bold">Name of the item searched!</span>
+                <span class="block text-gray-500 text-sm">Ingredients</span>
               </div>
+            <div class="top-0 bg-gray-400 rounded-md p-1 absolute top-0 ml-2 mt-2 ">
+              <span>Calories: </span>
+            </div>
+            </div>
+            <div class="bg-white rounded overflow-hidden shadow-md relative"> 
+              <img src="./Assets/images/taco.jpg" alt="tacos" class="w-full h-32 sm:h-48 object-cover" >
+              <div class="m-4">
+                <span class="font-bold">Name of the item searched!</span>
+                <span class="block text-gray-500 text-sm">Ingredients</span>
+              </div>
+            <div class="top-0 bg-gray-400 rounded-md p-1 absolute top-0 ml-2 mt-2 ">
+              <span>Calories: </span>
+            </div>
+            </div>
+            <div class="bg-white rounded overflow-hidden shadow-md relative"> 
+              <img src="./Assets/images/taco.jpg" alt="tacos" class="w-full h-32 sm:h-48 object-cover" >
+              <div class="m-4">
+                <span class="font-bold">Name of the item searched!</span>
+                <span class="block text-gray-500 text-sm">Ingredients</span>
+              </div>
+            <div class="top-0 bg-gray-400 rounded-md p-1 absolute top-0 ml-2 mt-2 ">
+              <span>Calories: </span>
+            </div>
             </div>
           </div>
+          
+
+          <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Most Popular</h4>
   
-          <h4>Most Popular</h4>
-  
-          <div>
+          <div class="mt-8">
             <!-- cards go here -->
           </div>
         </div>
