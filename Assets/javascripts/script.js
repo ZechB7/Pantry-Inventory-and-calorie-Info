@@ -1,43 +1,60 @@
-// input for recipe and ingredients get
-var query = "text"
-// document.getElementById("search-bar").value
-// var searchFormEl = document.querySelector('#search-form');
+//Recipe api ninja key = vxibSWpyKxfvY5Ra3REMUA==gGksQsKJpEJb8KeT
 
-// function handleSearchFormSubmit(event) {
-//   event.preventDefault();
+//button function
+$("#search-button").click(function (e) {
+  e.preventDefault();
+  var recipeSearch = $("#search-bar").val();
 
-//   var searchInputVal = document.querySelector('#search-input').value;
-//   if (!searchInputVal) {
-//     console.error('You need a search input value!');
-//     return;
-//   }
+  fetch("https://api.api-ninjas.com/v1/recipe?query=" + recipeSearch, {
+    method: "GET",
+    headers: { "X-Api-Key": "vxibSWpyKxfvY5Ra3REMUA==gGksQsKJpEJb8KeT" },
+    contentType: "application/json",
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response.json();
+    })
+    .then((result) => {
+      console.log(result);
+      // Store data
+      localStorage.setItem("recipe", JSON.stringify(result));
+      // do something with the result here
+    })
+    .catch((error) => {
+      console.error("Error: ", error);
+      // Retrieve data
+      const recipe = JSON.parse(localStorage.getItem("recipe")) || [];
+      recipe.push(result);
 
-//   var queryString = './search-results.html?q=' + searchInputVal + '&format=' + formatInputVal;
+      if (!recipe) {
+        console.error("No data in local storage");
+      } else {
+        console.log(recipe);
+        // handle the error here
+      }
+    })});
 
-//   location.assign(queryString);
-// }
-
-// searchFormEl.addEventListener('click', handleSearchFormSubmit);
 
 
-// recipe and ingredients get
-$.ajax({
-    method: 'GET',
-    url: 'https://api.api-ninjas.com/v1/recipe?query=' + 'taco',
-    headers: { 'X-Api-Key': 'vxibSWpyKxfvY5Ra3REMUA==gGksQsKJpEJb8KeT'},
-    contentType: 'application/json',
-    success: function(result) {
-        console.log(result);
-    },
-    error: function ajaxError(jqXHR) {
-        console.error('Error: ', jqXHR.responseText);
-    }
-});
+//     fetch("https://api.api-ninjas.com/v1/recipe?query=" + recipeSearch, {
+//   method: "GET",
+//   headers: { "X-Api-Key": "vxibSWpyKxfvY5Ra3REMUA==gGksQsKJpEJb8KeT" },
+//   contentType: "application/json",
+// })
+// .then((result) => {
+//   console.log(result);
+//   // Store data
+//   localStorage.setItem("recipe", JSON.stringify(result));
+//   // do something with the result here
+//   let resultsContainer = document.getElementById("results-container");
+//   result.forEach((recipe) => {
+//     let recipeContainer = document.createElement("div");
+//     let recipeTitle = document.createElement("h2");
+//     recipeTitle.innerText = recipe.title;
+//     recipeContainer.appendChild(recipeTitle);
+//     resultsContainer.appendChild(recipeContainer);
+//   });
+// });
 
-// in html needs div class of widget
-// $( function() {
-//   $( ".widget input[type=submit], .widget a, .widget button" ).button();
-//   $( "button, input, a" ).on( "click", function( event ) {
-//     event.preventDefault();
-//   } );
-// } );
