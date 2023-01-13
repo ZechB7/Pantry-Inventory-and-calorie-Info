@@ -3,54 +3,62 @@ console.log(result);
 let resultsContainer = document.getElementById("results-card");
 result.forEach((recipe) => {
   let recipeContainer = document.createElement("div");
-  recipeContainer.className = "bg-white rounded overflow-hidden shadow-md relative"
+  recipeContainer.className =
+    "bg-white rounded overflow-hidden shadow-md relative";
   let recipeTitle = document.createElement("h1");
   let recipeIngredients = document.createElement("p");
-  recipeTitle.innerText = recipe.title;
-  recipeIngredients.innerHTML = recipe.ingredients
+  let recipeInstruction = document.createElement("p");
+  let recipeServing = document.createElement("p");
+  recipeTitle.innerText = "Title: " + recipe.title;
+  recipeIngredients.innerHTML = "Ingredients: " + recipe.ingredients;
+  recipeInstruction.innerHTML = "Recidpe: " + recipe.instructions;
+  recipeServing.innerHTML = "Serving: " + recipe.servings;
   recipeContainer.appendChild(recipeTitle);
   recipeContainer.appendChild(recipeIngredients);
+  recipeContainer.appendChild(recipeInstruction);
+  recipeContainer.appendChild(recipeServing);
   resultsContainer.appendChild(recipeContainer);
   // resultsContainer.appendChild(recipeIngredients);
   console.log(recipeIngredients);
 });
 
-$('#site-search').keypress(function(event){
-  var keycode = (event.keyCode ? event.keyCode : event.which);
-  if(keycode == '13'){
-  event.preventDefault();
+$("#site-search").keypress(function (event) {
+  var keycode = event.keyCode ? event.keyCode : event.which;
+  if (keycode == "13") {
+    event.preventDefault();
 
-  var recipeSearch = $("#site-search").val();
+    var recipeSearch = $("#site-search").val();
 
-  fetch("https://api.api-ninjas.com/v1/recipe?query=" + recipeSearch, {
-    method: "GET",
-    headers: { "X-Api-Key": "vxibSWpyKxfvY5Ra3REMUA==gGksQsKJpEJb8KeT" },
-    contentType: "application/json",
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(response.statusText);
-      }
-      return response.json();
+    fetch("https://api.api-ninjas.com/v1/recipe?query=" + recipeSearch, {
+      method: "GET",
+      headers: { "X-Api-Key": "vxibSWpyKxfvY5Ra3REMUA==gGksQsKJpEJb8KeT" },
+      contentType: "application/json",
     })
-    .then((result) => {
-      console.log(result);
-      // Store data
-      localStorage.setItem("recipe", JSON.stringify(result));
-      // do something with the result here
-      window.location.href = "../../results.html";
-    })
-    .catch((error) => {
-      console.error("Error: ", error);
-      // Retrieve data
-      const recipe = JSON.parse(localStorage.getItem("recipe")) || [];
-      recipe.push(result);
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+        return response.json();
+      })
+      .then((result) => {
+        console.log(result);
+        // Store data
+        localStorage.setItem("recipe", JSON.stringify(result));
+        // do something with the result here
+        window.location.href = "../../results.html";
+      })
+      .catch((error) => {
+        console.error("Error: ", error);
+        // Retrieve data
+        const recipe = JSON.parse(localStorage.getItem("recipe")) || [];
+        recipe.push(result);
 
-      if (!recipe) {
-        console.error("No data in local storage");
-      } else {
-        console.log(recipe);
-        // handle the error here
-      }
-    });
-}});
+        if (!recipe) {
+          console.error("No data in local storage");
+        } else {
+          console.log(recipe);
+          // handle the error here
+        }
+      });
+  }
+});
