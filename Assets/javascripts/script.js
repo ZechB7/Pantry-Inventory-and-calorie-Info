@@ -21,6 +21,7 @@ $("#search-button").click(function (e) {
       // Store data
       localStorage.setItem("recipe", JSON.stringify(result));
       // do something with the result here
+      window.location.href = "../../results.html";
     })
     .catch((error) => {
       console.error("Error: ", error);
@@ -34,9 +35,8 @@ $("#search-button").click(function (e) {
         console.log(recipe);
         // handle the error here
       }
-    })});
-
-
+    });
+});
 
 //     fetch("https://api.api-ninjas.com/v1/recipe?query=" + recipeSearch, {
 //   method: "GET",
@@ -57,4 +57,3 @@ $("#search-button").click(function (e) {
 //     resultsContainer.appendChild(recipeContainer);
 //   });
 // });
-
