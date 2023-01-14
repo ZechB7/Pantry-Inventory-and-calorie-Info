@@ -94,6 +94,7 @@ $("#site-search").keypress(function (event) {
         // check if there are no search results the log.
         if (result.length === 0){
           console.log("No Search Results");
+          document.getElementById("errorText").innerHTML = "No Search Results";
         } else if (result.length > 0){
           window.location.href = "./results.html";  
         }

@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="http://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
     />
     <link rel="stylesheet" href="./Assets/css/reset.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./Assets/css/style.css" />
+    <link rel="stylesheet" href="./Assets/css/results.css" />
     <style type="text/tailwindcss">
       @layer utilities {
         .content-auto {
@@ -20,12 +23,12 @@
       }
     </style>
 
-    <title>QuickRecipe</title>
+    <title>QuikRecipe</title>
   </head>
 
-  <body>
-    <div class="grid md:grid-cols-6">
-      <div class="col-span-1">
+  <body id="background">
+    <div id= "resultsPage" class="grid md:grid-cols-6">
+      <div class="col-span-2">
         <nav >
           <div>
             <h1 class="font-bold uppercase p-4 border-b border-gray-200">
@@ -41,29 +44,24 @@
             <li class="pt-5 pb-5 pl-1">
             <input type="search" id="site-search" name="q" placeholder="Search for new recipe!" class="rounded">
             </li>
+            <!-- error text -->
+            <div>
+              <h3 id="errorText"></h3>
+            </div>
             <li>
-              <a href="#">
-                <span>Contact</span>
-              </a>
-            </li>
           </ul>
         </nav>
       </div>  
-      <main class="px-16 py-6 md:col-span-5">
-        <div class="flex justify-center md:justify-end">
-          <a href="#" class="">Log in</a>
-          <a href="#" class="ml-2">Sign up</a>
-
-        </div>
+      <main class="px-16 py-6 md:col-span-8">
 
         <header>
-          <h2 class="text-6xl">Recipes</h2>
+          <h2 class="md:grid flex justify-center text-6xl">Recipes</h2>
           
         </header>
 
         <div>
 
-          <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Latest Recipes</h4>
+          <h4 class=" font-bold mt-12 pb-2 border-b border-gray-200">Latest Recipes</h4>
     
           <div class="mt-8 grid lg:grid-cols-3 gap-10" id="results-card">
             <!-- cards go here -->
