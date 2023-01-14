@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <link
-      rel="stylesheet"
-      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
-    />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
     <link rel="stylesheet" href="./Assets/css/reset.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./Assets/css/style.css" />
     <style type="text/tailwindcss">
-      @layer utilities {
+        @layer utilities {
         .content-auto {
           content-visibility: auto;
         }
@@ -22,31 +19,27 @@
     </style>
 
     <title>QuickRecipe</title>
-  </head>
+</head>
 
-  <body>
+<body>
 
     <div id="welcome-page" class="md:container md:mx-auto text-center">
-      <div id="welcome-page-container">
-          <h1 id="welcome-page-h1" class="text-center">QuikRecipe</h1>
+        <div id="welcome-page-container">
+            <h1 id="welcome-page-h1" class="text-center">QuikRecipe</h1>
 
-          <!-- serach bar -->
-          <div>
-            <input
-              type="text"
-              name="search-bar"
-              id="search-bar"
-              placeholder="search"
-              class="rounded-lg text-center mt-3"
-            />
-          </div>
-          
-          <button id="search-button" type="submit" class="cursor-pointer rounded-lg text-center mt-3 px-12 p-3 place-content-center">
-            Search
-       </button>
+            <!-- serach bar -->
+            <div>
+                <input type="text" name="search-bar" id="search-bar" placeholder="search"
+                    class="rounded-lg text-center mt-3" />
+            </div>
+
+            <button id="search-button" type="submit"
+                class="cursor-pointer rounded-lg text-center mt-3 px-12 p-3 place-content-center">
+                Search
+            </button>
 
         </div>
-      </div>
+    </div>
 
 
 
@@ -56,5 +49,6 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
     <script src="./Assets/javascripts/script.js"></script>
-  </body>
+</body>
+
 </html>

@@ -1,9 +1,10 @@
 //Recipe api ninja key = vxibSWpyKxfvY5Ra3REMUA==gGksQsKJpEJb8KeT
 
 //button function
+
 $("#search-button").click(function (e) {
-  e.preventDefault();
-  var recipeSearch = $("#search-bar").val();
+    e.preventDefault();
+    var recipeSearch = $("#search-bar").val();
 
   fetch("https://api.api-ninjas.com/v1/recipe?query=" + recipeSearch, {
     method: "GET",
@@ -21,7 +22,13 @@ $("#search-button").click(function (e) {
       // Store data
       localStorage.setItem("recipe", JSON.stringify(result));
       // do something with the result here
-      window.location.href = "./results.html";
+      
+      // check if there are no search results the log.
+      if (result.length === 0){
+        console.log("No Search Results");
+      } else if (result.length > 0){
+        window.location.href = "./results.html";  
+      }
     })
     .catch((error) => {
       console.error("Error: ", error);
