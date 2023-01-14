@@ -16,19 +16,25 @@ result.forEach((recipe, i) => {
   let recipeTitle = document.createElement("h1");
 
   let recipeIngredients = document.createElement("p");
+  recipeIngredients.className = "text-align-left";
+  let recipeButton = document.createElement("button");
+  recipeButton.className = " px-4 py-2.5 bg-blue-500 text-white font-medium text-xs leading-tight rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out collapsible";
   recipeIngredients.className = "py-2";
-  let ingredientsList = recipe.ingredients.replaceAll("|", "<br>");
+  let ingredientsList = recipe.ingredients.replaceAll("|", "<li>");
+  
   console.log(ingredientsList);
+  let collapseDiv = document.createElement("div")
 
   let recipeInstruction = document.createElement("p");
   recipeInstruction.className = "py-2";
   let recipeServing = document.createElement("p");
-  recipeTitle.innerText = "Title: " + recipe.title;
+  recipeButton.innerHTML = recipe.title + " Recipe" + "<br>" + "<br>" + ingredientsList;
+
   recipeIngredients.innerHTML = "Ingredients: <br>" + ingredientsList;
 
   recipeInstruction.innerHTML = "Recipe: <br>" + recipe.instructions;
   recipeServing.innerHTML = "Serving: " + recipe.servings;
-  recipeContainer.appendChild(recipeTitle);
+  recipeContainer.appendChild(recipeButton);
   recipeContainer.appendChild(recipeIngredients);
   recipeContainer.appendChild(recipeInstruction);
   recipeContainer.appendChild(recipeServing);

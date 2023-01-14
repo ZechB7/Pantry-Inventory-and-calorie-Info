@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="./Assets/css/reset.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./Assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script> 
     <style type="text/tailwindcss">
       @layer utilities {
         .content-auto {
@@ -19,6 +23,17 @@
         }
       }
     </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
 
     <title>QuickRecipe</title>
   </head>
@@ -96,7 +111,7 @@
             <div class="top-0 bg-gray-400 rounded-md p-1 absolute top-0 ml-2 mt-2 ">
               <span>Calories: </span> -->
             </div>
-            </div> -->
+            </div> 
           </div>
           
 
@@ -117,7 +132,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-
     <script src="./Assets/javascripts/results.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
   </body>
 </html>
