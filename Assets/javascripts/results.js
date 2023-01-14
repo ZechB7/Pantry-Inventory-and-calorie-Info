@@ -2,12 +2,17 @@ var result = JSON.parse(localStorage.getItem("recipe")) || [];
 console.log(result);
 
 // var resultsContainer = document.getElementById("results-card");
-result.forEach((recipe, i) => { 
+result.forEach((recipe, i) => {
   // var result = JSON.parse(localStorage.getItem("recipe")) || [];
-  var resultsContainer = document.getElementById("results-card");
-  if (i < 6) var recipeContainer = document.createElement("div");
-  // let resultsContainer = document.getElementById("results-card");
-  recipeContainer.className ="bg-white rounded overflow-hidden shadow-md relative ";
+
+  let resultsContainer = document.getElementById("results-card");
+  let recipeContainer = document.createElement("div");
+  if (i < 6) {
+    recipeContainer.className =
+      "bg-white rounded overflow-hidden shadow-md relative";
+    
+  
+
   let recipeTitle = document.createElement("h1");
 
   let recipeIngredients = document.createElement("p");
@@ -30,6 +35,7 @@ result.forEach((recipe, i) => {
   resultsContainer.appendChild(recipeContainer);
   // resultsContainer.appendChild(recipeIngredients);
   console.log(recipeIngredients);
+  }
 });
 
 $("#site-search").keypress(function (event) {
