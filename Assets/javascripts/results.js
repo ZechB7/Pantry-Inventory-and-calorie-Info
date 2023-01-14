@@ -1,34 +1,34 @@
+var result = JSON.parse(localStorage.getItem("recipe")) || [];
+console.log(result);
 
-  var result = JSON.parse(localStorage.getItem("recipe")) || [];
-  console.log(result);
-  let resultsContainer = document.getElementById("results-card");
-  result.forEach((recipe) => {
-    let recipeContainer = document.createElement("div");
-    recipeContainer.className =
-      "bg-white rounded overflow-hidden shadow-md relative ";
-    let recipeTitle = document.createElement("h1");
+let resultsContainer = document.getElementById("results-card");
+result.forEach((recipe, i) => {
+  var recipeContainer = document.createElement("div");
+  if (i < 6) 
+  recipeContainer.className ="bg-white rounded overflow-hidden shadow-md relative";
+  let recipeTitle = document.createElement("h1");
 
-    let recipeIngredients = document.createElement("p");
-    recipeIngredients.className = "py-2";
-    let ingredientsList = recipe.ingredients.replaceAll("|", "<br>");
-    console.log(ingredientsList);
+  let recipeIngredients = document.createElement("p");
+  recipeIngredients.className = "py-2";
+  let ingredientsList = recipe.ingredients.replaceAll("|", "<br>");
+  console.log(ingredientsList);
 
-    let recipeInstruction = document.createElement("p");
-    recipeInstruction.className = "py-2";
-    let recipeServing = document.createElement("p");
-    recipeTitle.innerText = "Title: " + recipe.title;
-    recipeIngredients.innerHTML = "Ingredients: <br>" + ingredientsList;
+  let recipeInstruction = document.createElement("p");
+  recipeInstruction.className = "py-2";
+  let recipeServing = document.createElement("p");
+  recipeTitle.innerText = "Title: " + recipe.title;
+  recipeIngredients.innerHTML = "Ingredients: <br>" + ingredientsList;
 
-    recipeInstruction.innerHTML = "Recipe: <br>" + recipe.instructions;
-    recipeServing.innerHTML = "Serving: " + recipe.servings;
-    recipeContainer.appendChild(recipeTitle);
-    recipeContainer.appendChild(recipeIngredients);
-    recipeContainer.appendChild(recipeInstruction);
-    recipeContainer.appendChild(recipeServing);
-    resultsContainer.appendChild(recipeContainer);
-    // resultsContainer.appendChild(recipeIngredients);
-    console.log(recipeIngredients);
-  });
+  recipeInstruction.innerHTML = "Recipe: <br>" + recipe.instructions;
+  recipeServing.innerHTML = "Serving: " + recipe.servings;
+  recipeContainer.appendChild(recipeTitle);
+  recipeContainer.appendChild(recipeIngredients);
+  recipeContainer.appendChild(recipeInstruction);
+  recipeContainer.appendChild(recipeServing);
+  resultsContainer.appendChild(recipeContainer);
+  // resultsContainer.appendChild(recipeIngredients);
+  console.log(recipeIngredients);
+});
 
 $("#site-search").keypress(function (event) {
   var keycode = event.keyCode ? event.keyCode : event.which;
@@ -52,9 +52,38 @@ $("#site-search").keypress(function (event) {
         console.log(result);
         // Store data
         localStorage.setItem("recipe", JSON.stringify(result));
-        
+        let resultsContainer = document.getElementById("results-card");
+        result.forEach((recipe, i) => {
+          let recipeContainer = document.createElement("div");
+          if (i < 6) 
+            recipeContainer.className =
+              "bg-white rounded overflow-hidden shadow-md relative ";
+            let recipeTitle = document.createElement("h1");
+
+            let recipeIngredients = document.createElement("p");
+            recipeIngredients.className = "py-2";
+            let ingredientsList = recipe.ingredients.replaceAll("|", "<br>");
+            console.log(ingredientsList);
+
+            let recipeInstruction = document.createElement("p");
+            recipeInstruction.className = "py-2";
+            let recipeServing = document.createElement("p");
+            recipeTitle.innerText = "Title: " + recipe.title;
+            recipeIngredients.innerHTML = "Ingredients: <br>" + ingredientsList;
+
+            recipeInstruction.innerHTML = "Recipe: <br>" + recipe.instructions;
+            recipeServing.innerHTML = "Serving: " + recipe.servings;
+            recipeContainer.appendChild(recipeTitle);
+            recipeContainer.appendChild(recipeIngredients);
+            recipeContainer.appendChild(recipeInstruction);
+            recipeContainer.appendChild(recipeServing);
+            resultsContainer.appendChild(recipeContainer);
+            // resultsContainer.appendChild(recipeIngredients);
+            console.log(recipeIngredients);
+          }
+        );
         // do something with the result here
-        window.location.href = "../../results.html";
+        window.location.href = "./results.html";
       })
       .catch((error) => {
         console.error("Error: ", error);
