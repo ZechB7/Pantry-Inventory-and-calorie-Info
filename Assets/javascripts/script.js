@@ -3,8 +3,8 @@
 //button function
 
 $("#search-button").click(function (e) {
-    e.preventDefault();
-    var recipeSearch = $("#search-bar").val();
+  e.preventDefault();
+  var recipeSearch = $("#search-bar").val();
 
   fetch("https://api.api-ninjas.com/v1/recipe?query=" + recipeSearch, {
     method: "GET",

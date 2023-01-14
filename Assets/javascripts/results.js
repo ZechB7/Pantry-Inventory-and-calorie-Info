@@ -10,31 +10,29 @@ result.forEach((recipe, i) => {
   if (i < 6) {
     recipeContainer.className =
       "bg-white rounded overflow-hidden shadow-md relative";
-    
-  
 
-  let recipeTitle = document.createElement("h1");
+    let recipeTitle = document.createElement("h1");
 
-  let recipeIngredients = document.createElement("p");
-  recipeIngredients.className = "py-2";
-  let ingredientsList = recipe.ingredients.replaceAll("|", "<br>");
-  console.log(ingredientsList);
+    let recipeIngredients = document.createElement("p");
+    recipeIngredients.className = "py-2";
+    let ingredientsList = recipe.ingredients.replaceAll("|", "<br>");
+    console.log(ingredientsList);
 
-  let recipeInstruction = document.createElement("p");
-  recipeInstruction.className = "py-2";
-  let recipeServing = document.createElement("p");
-  recipeTitle.innerText = "Title: " + recipe.title;
-  recipeIngredients.innerHTML = "Ingredients: <br>" + ingredientsList;
+    let recipeInstruction = document.createElement("p");
+    recipeInstruction.className = "py-2";
+    let recipeServing = document.createElement("p");
+    recipeTitle.innerText = "Title: " + recipe.title;
+    recipeIngredients.innerHTML = "Ingredients: <br>" + ingredientsList;
 
-  recipeInstruction.innerHTML = "Recipe: <br>" + recipe.instructions;
-  recipeServing.innerHTML = "Serving: " + recipe.servings;
-  recipeContainer.appendChild(recipeTitle);
-  recipeContainer.appendChild(recipeIngredients);
-  recipeContainer.appendChild(recipeInstruction);
-  recipeContainer.appendChild(recipeServing);
-  resultsContainer.appendChild(recipeContainer);
-  // resultsContainer.appendChild(recipeIngredients);
-  console.log(recipeIngredients);
+    recipeInstruction.innerHTML = "Recipe: <br>" + recipe.instructions;
+    recipeServing.innerHTML = "Serving: " + recipe.servings;
+    recipeContainer.appendChild(recipeTitle);
+    recipeContainer.appendChild(recipeIngredients);
+    recipeContainer.appendChild(recipeInstruction);
+    recipeContainer.appendChild(recipeServing);
+    resultsContainer.appendChild(recipeContainer);
+    // resultsContainer.appendChild(recipeIngredients);
+    console.log(recipeIngredients);
   }
 });
 

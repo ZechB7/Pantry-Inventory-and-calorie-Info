@@ -26,10 +26,10 @@
   <body>
     <div class="grid md:grid-cols-6">
       <div class="col-span-1">
-        <nav >
+        <nav>
           <div>
             <h1 class="font-bold uppercase p-4 border-b border-gray-200">
-              <a href="/" class="text-blue-600 sm:text-blue-400 ">QuikRecipe</a>
+              <a href="/" class="text-blue-600 sm:text-blue-400">QuikRecipe</a>
             </h1>
           </div>
           <ul>
@@ -39,7 +39,13 @@
               </a>
             </li>
             <li class="pt-5 pb-5 pl-1">
-            <input type="search" id="site-search" name="q" placeholder="Search for new recipe!" class="rounded">
+              <input
+                type="search"
+                id="site-search"
+                name="q"
+                placeholder="Search for new recipe!"
+                class="rounded"
+              />
             </li>
             <li>
               <a href="#">
@@ -48,23 +54,22 @@
             </li>
           </ul>
         </nav>
-      </div>  
+      </div>
       <main class="px-16 py-6 md:col-span-5">
         <div class="flex justify-center md:justify-end">
           <a href="#" class="">Log in</a>
           <a href="#" class="ml-2">Sign up</a>
-
         </div>
 
         <header>
           <h2 class="text-6xl">Recipes</h2>
-          
         </header>
 
         <div>
+          <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">
+            Latest Recipes
+          </h4>
 
-          <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Latest Recipes</h4>
-    
           <div class="mt-8 grid lg:grid-cols-3 gap-10" id="results-card">
             <!-- cards go here -->
             <!-- <div class="bg-white rounded overflow-hidden shadow-md relative"> 
@@ -98,10 +103,11 @@
             </div>
             </div> -->
           </div>
-          
 
-          <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Most Popular</h4>
-  
+          <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">
+            Most Popular
+          </h4>
+
           <div class="mt-8">
             <!-- cards go here -->
           </div>
