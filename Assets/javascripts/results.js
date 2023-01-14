@@ -1,11 +1,18 @@
 var result = JSON.parse(localStorage.getItem("recipe")) || [];
 console.log(result);
 
-let resultsContainer = document.getElementById("results-card");
+// var resultsContainer = document.getElementById("results-card");
 result.forEach((recipe, i) => {
-  var recipeContainer = document.createElement("div");
-  if (i < 6) 
-  recipeContainer.className ="bg-white rounded overflow-hidden shadow-md relative";
+  // var result = JSON.parse(localStorage.getItem("recipe")) || [];
+
+  let resultsContainer = document.getElementById("results-card");
+  let recipeContainer = document.createElement("div");
+  if (i < 6) {
+    recipeContainer.className =
+      "bg-white rounded overflow-hidden shadow-md relative";
+    
+  
+
   let recipeTitle = document.createElement("h1");
 
   let recipeIngredients = document.createElement("p");
@@ -28,6 +35,7 @@ result.forEach((recipe, i) => {
   resultsContainer.appendChild(recipeContainer);
   // resultsContainer.appendChild(recipeIngredients);
   console.log(recipeIngredients);
+  }
 });
 
 $("#site-search").keypress(function (event) {
@@ -54,8 +62,8 @@ $("#site-search").keypress(function (event) {
         localStorage.setItem("recipe", JSON.stringify(result));
         let resultsContainer = document.getElementById("results-card");
         result.forEach((recipe, i) => {
-          let recipeContainer = document.createElement("div");
-          if (i < 6) 
+          if (i < 6) {
+            let recipeContainer = document.createElement("div");
             recipeContainer.className =
               "bg-white rounded overflow-hidden shadow-md relative ";
             let recipeTitle = document.createElement("h1");
@@ -71,30 +79,23 @@ $("#site-search").keypress(function (event) {
             recipeTitle.innerText = "Title: " + recipe.title;
             recipeIngredients.innerHTML = "Ingredients: <br>" + ingredientsList;
 
-            recipeInstruction.innerHTML = "Recipe: <br>" + recipe.instructions;
-            recipeServing.innerHTML = "Serving: " + recipe.servings;
-            recipeContainer.appendChild(recipeTitle);
-            recipeContainer.appendChild(recipeIngredients);
             recipeContainer.appendChild(recipeInstruction);
             recipeContainer.appendChild(recipeServing);
-            resultsContainer.appendChild(recipeContainer);
             // resultsContainer.appendChild(recipeIngredients);
             console.log(recipeIngredients);
           }
+
         );
         // do something with the result here
-        window.location.href = "./results.html";
-      })
+        window.location.href = "./results.html";  
       .catch((error) => {
         console.error("Error: ", error);
         // Retrieve data
-        const recipe = JSON.parse(localStorage.getItem("recipe")) || [];
         recipe.push(result);
 
         if (!recipe) {
           console.error("No data in local storage");
         } else {
-          console.log(recipe);
           // handle the error here
         }
       });
