@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
     <link
       rel="stylesheet"
       href="http://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
     />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="./Assets/css/reset.css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./Assets/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-    <script src="https://cdn.tailwindcss.com"></script> 
     <style type="text/tailwindcss">
       @layer utilities {
         .content-auto {
@@ -34,7 +37,7 @@
         }
       }
     </script>
-
+    
     <title>QuickRecipe</title>
   </head>
 
@@ -78,9 +81,11 @@
 
         <div>
 
-          <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Latest Recipes</h4>
+          <h4 class="font-bold mt-12 pb-2 border-b border-gray-200 ">Latest Recipes</h4>
     
-          <div class="mt-8 grid lg:grid-cols-3 gap-10" id="results-card">
+          <div class="mt-8 grid lg:grid-cols-3 gap-10 text-align-left" id="results-card">
+            
+
             <!-- cards go here -->
             <!-- <div class="bg-white rounded overflow-hidden shadow-md relative"> 
               <img src="./Assets/images/taco.jpg" alt="tacos" class="w-full h-32 sm:h-48 object-cover" >
@@ -129,6 +134,7 @@
     </div>
 
     <div id="results-container"></div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
