@@ -23,6 +23,7 @@ $("#search-button").click(function (e) {
       localStorage.setItem("recipe", JSON.stringify(result));
       // do something with the result here
       
+      // check if there are no search results the log.
       if (result.length === 0){
         console.log("No Search Results");
       } else if (result.length > 0){
