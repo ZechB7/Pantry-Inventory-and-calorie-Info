@@ -22,7 +22,13 @@ $("#search-button").click(function (e) {
       // Store data
       localStorage.setItem("recipe", JSON.stringify(result));
       // do something with the result here
-      window.location.href = "./results.html";
+      
+      // check if there are no search results the log.
+      if (result.length === 0){
+        console.log("No Search Results");
+      } else if (result.length > 0){
+        window.location.href = "./results.html";  
+      }
     })
     .catch((error) => {
       console.error("Error: ", error);
