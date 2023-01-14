@@ -1,5 +1,5 @@
 #background {
-  background-color: #F0EAD6;
+  background-color: #f3eede;
   color:#006d77;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
@@ -14,16 +14,17 @@
   right: 0;
   bottom: 0;
 }
+
 #welcome-page-h1 {
   font-size: 69px;
   font-weight: bold;
   letter-spacing: 2px;
 }
+
 #search-bar {
   font-size: 2rem;
   color: #83c5be;
   background-color: #e4e4e1;
-
 }
 
 #search-button {
