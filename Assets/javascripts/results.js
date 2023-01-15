@@ -10,27 +10,65 @@ result.forEach((recipe, i) => {
     recipeContainer.className =
       "bg-white rounded overflow-hidden shadow-md relative";
 
-    let recipeTitle = document.createElement("h1");
 
-    let recipeIngredients = document.createElement("p");
-    recipeIngredients.className = "py-2";
-    let ingredientsList = recipe.ingredients.replaceAll("|", "<br>");
-    console.log(ingredientsList);
 
-    let recipeInstruction = document.createElement("p");
-    recipeInstruction.className = "py-2";
-    let recipeServing = document.createElement("p");
-    recipeTitle.innerText = "Title: " + recipe.title;
-    recipeIngredients.innerHTML = "Ingredients: <br>" + ingredientsList;
+// Working on the below collapse capabilities 
 
-    recipeInstruction.innerHTML = "Recipe: <br>" + recipe.instructions;
-    recipeServing.innerHTML = "Serving: " + recipe.servings;
-    recipeContainer.appendChild(recipeTitle);
-    recipeContainer.appendChild(recipeIngredients);
-    recipeContainer.appendChild(recipeInstruction);
-    recipeContainer.appendChild(recipeServing);
-    resultsContainer.appendChild(recipeContainer);
-    console.log(recipeIngredients);
+  // let collapseDiv = document.createElement("div")
+  // if (collapseDiv) {
+  //   collapseDiv.setAttribute("class", "collapse border border-base-300 bg-base-100 rounded-box");
+  // }
+  // collapseDiv.tabIndex = 0
+
+  
+  // let collapseTitle = document.createElement("div")
+  // collapseTitle.className = "collapse-title text-xl font-medium";
+  // collapseTitle.innerHTML = "Recipe Name: "+ recipe.title + "<br>" + "<br>" + "Ingredients: " + "<br>" + "<br>" + ingredientsList;
+
+  // let collapseContent = document.createElement("div");
+  // collapseContent.className = "collapse-content";
+
+  // let instructions = document.createElement("p")
+  // instructions.innerHTML = recipe.instructions
+
+  // recipeContainer.appendChild(collapseDiv);
+  // collapseDiv.appendChild(collapseTitle);
+  // collapseDiv.appendChild(collapseContent);
+  // collapseContent.appendChild(instructions);
+  // resultsContainer.appendChild(collapseDiv);
+
+  var recipeTit = recipe.title
+  recipeTit.className = "text-4xl"
+
+  let recipeTitle = document.createElement("h1");
+  recipeTitle.className = 'text-xl'
+  let recipeIngredients = document.createElement("p");
+  recipeIngredients.className = "text-align-left";
+  let recipeButton = document.createElement("button");
+  recipeButton.className = " w-full h-full px-4 py-2.5 text-start bg-blue-500 text-white font-medium text-xs leading-tight rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out collapsible";
+  recipeIngredients.className = "py-2";
+  let ingredientsList = recipe.ingredients.replaceAll("|", "<br>");
+  
+  console.log(ingredientsList);
+  
+
+  let recipeInstruction = document.createElement("p");
+  recipeInstruction.className = "py-2";
+  let recipeServing = document.createElement("p");
+  recipeButton.innerHTML = recipeTit + " Recipe" + "<br>" + "<br>" + "Ingredients: " + "<br>" + "<br>" + ingredientsList;
+
+  // recipeIngredients.innerHTML = "Ingredients: <br>" + "Ingredients: " +  + ingredientsList;
+
+  recipeInstruction.innerHTML = "Recipe: <br>" + recipe.instructions;
+  recipeServing.innerHTML = "Serving: " + recipe.servings;
+  recipeContainer.appendChild(recipeButton);
+  // recipeContainer.appendChild(recipeIngredients);
+  // recipeContainer.appendChild(recipeInstruction);
+  // recipeContainer.appendChild(recipeServing);
+  resultsContainer.appendChild(recipeContainer);
+  // resultsContainer.appendChild(recipeIngredients);
+  console.log(recipeIngredients);
+
   }
 });
 
@@ -112,7 +150,13 @@ $("#site-search").keypress(function (event) {
 
         });
         // do something with the result here
-        window.location.href = "../../results.html";
+        // check if there are no search results the log.
+        if (result.length === 0){
+          console.log("No Search Results");
+          document.getElementById("errorText").innerHTML = "No Search Results";
+        } else if (result.length > 0){
+          window.location.href = "./results.html";  
+        }
       })
       .catch((error) => {
         console.error("Error: ", error);
@@ -128,6 +172,7 @@ $("#site-search").keypress(function (event) {
         }
       });
   }
+
 });
 
 $("#site-search").keypress(function (event) {
@@ -170,13 +215,10 @@ $("#site-search").keypress(function (event) {
         calorieResultContainer.appendChild(calrorieName);
         calorieResultContainer.appendChild(calrorieNameCalories);
       }
-      window.location.href = "../../results.html";
+      window.location.href = "./results.html";
   })
     .catch((error) => {
       console.error("Error: ", error);
     });
   }
-});
-
-
-       
+});     
