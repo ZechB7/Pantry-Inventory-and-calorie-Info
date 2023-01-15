@@ -5,16 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-    <link
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link
       rel="stylesheet"
       href="http://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
     />
-    <link rel="stylesheet" href="./Assets/css/reset.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./Assets/css/results.css" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="./Assets/css/reset.css" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="./Assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+  <link rel="stylesheet" href="./Assets/css/results.css" />
+
     <style type="text/tailwindcss">
       @layer utilities {
         .content-auto {
@@ -22,17 +33,17 @@
         }
       }
     </style>
+ <title>QuikRecipe</title>
 
-    <title>QuikRecipe</title>
   </head>
 
   <body id="background">
     <div id= "resultsPage" class="grid md:grid-cols-6">
-      <div class="col-span-2">
-        <nav >
+      <div class="col-span-1">
+        <nav>
           <div>
             <h1 class="font-bold uppercase p-4 border-b border-gray-200">
-              <a href="/" class="text-blue-600 sm:text-blue-400 ">QuikRecipe</a>
+              <a href="/" class="text-blue-600 sm:text-blue-400">QuikRecipe</a>
             </h1>
           </div>
           <ul>
@@ -42,7 +53,13 @@
               </a>
             </li>
             <li class="pt-5 pb-5 pl-1">
-            <input type="search" id="site-search" name="q" placeholder="Search for new recipe!" class="rounded">
+              <input
+                type="search"
+                id="site-search"
+                name="q"
+                placeholder="Search for new recipe!"
+                class="rounded"
+              />
             </li>
             <!-- error text -->
             <div>
@@ -51,19 +68,26 @@
             <li>
           </ul>
         </nav>
-      </div>  
-      <main class="px-16 py-6 md:col-span-8">
+      </div>
+      <main class="px-16 py-6 md:col-span-5">
+
+
 
         <header>
           <h2 class="md:grid flex justify-center text-6xl">Recipes</h2>
           
+
         </header>
 
         <div>
+          <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">
+            Latest Recipes
+          </h4>
 
           <h4 class=" font-bold mt-12 pb-2 border-b border-gray-200">Latest Recipes</h4>
     
-          <div class="mt-8 grid lg:grid-cols-3 gap-10" id="results-card">
+          <div class="mt-8 grid lg:grid-cols-3 gap-10 text-align-left" id="results-card">
+            
             <!-- cards go here -->
             <!-- <div class="bg-white rounded overflow-hidden shadow-md relative"> 
               <img src="./Assets/images/taco.jpg" alt="tacos" class="w-full h-32 sm:h-48 object-cover" >
@@ -94,13 +118,14 @@
             <div class="top-0 bg-gray-400 rounded-md p-1 absolute top-0 ml-2 mt-2 ">
               <span>Calories: </span> -->
             </div>
-            </div> -->
+            </div> 
           </div>
-          
 
-          <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Most Popular</h4>
-  
-          <div class="mt-8">
+
+          <div id="calorie-result-container" class="mt-8">
+          <h4 id="calorie-container-title" class="font-bold mt-12 pb-2 border-b border-gray-200"></h4>
+
+         
             <!-- cards go here -->
           </div>
         </div>
@@ -113,9 +138,10 @@
 
     <div id="results-container"></div>
 
+
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-
     <script src="./Assets/javascripts/results.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
   </body>
 </html>
