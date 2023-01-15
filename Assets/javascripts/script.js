@@ -39,7 +39,7 @@ $("#search-button").click(function (e) {
     });
 
   var calorieSearch = $("#search-bar").val();
-  method: "GET",
+  
     fetch("https://api.calorieninjas.com/v1/nutrition?query=" + calorieSearch, {
       method: "GET",
       headers: { "X-Api-Key": "SLhnmDL5lMFC68loy3+Uiw==n3FqgMaxOUjrHMUd" },
