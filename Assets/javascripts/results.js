@@ -174,7 +174,7 @@ function displayRecipe(result) {
 // var result = JSON.parse(localStorage.getItem("recipe")) || [];
 // console.log(result);
 
-    let recipeTitle = document.createElement("h1");
+    // let recipeTitle = document.createElement("h1");
 
 //     let recipeTitle = document.createElement("h1");
 
@@ -200,15 +200,15 @@ function displayRecipe(result) {
 //   }
 // });
 
-var calorieResult = JSON.parse(localStorage.getItem("calories")) || [];
-console.log(calorieResult);
-var name = items.name;
-console.log(name);
+// var calorieResult = JSON.parse(localStorage.getItem("calories")) || [];
+// console.log(calorieResult);
+// var name = items.name;
+// console.log(name);
 
-  calorieResultContainer.appendChild(calorieTitle);
-  calorieResultContainer.appendChild(calrorieName);
-  calorieResultContainer.appendChild(calrorieNameCalories);
-}
+//   calorieResultContainer.appendChild(calorieTitle);
+//   calorieResultContainer.appendChild(calrorieName);
+//   calorieResultContainer.appendChild(calrorieNameCalories);
+// }
 
 
 // $("#site-search").keypress(function (event) {
@@ -295,38 +295,38 @@ console.log(name);
 //   if (keycode == "13") {
 //     event.preventDefault();
 
-            let recipeInstruction = document.createElement("p");
-            recipeInstruction.className = "py-2";
-            let recipeServing = document.createElement("p");
-            recipeTitle.innerText = "Title: " + recipe.title;
-            recipeIngredients.innerHTML = "Ingredients: <br>" + ingredientsList;
+//             let recipeInstruction = document.createElement("p");
+//             recipeInstruction.className = "py-2";
+//             let recipeServing = document.createElement("p");
+//             recipeTitle.innerText = "Title: " + recipe.title;
+//             recipeIngredients.innerHTML = "Ingredients: <br>" + ingredientsList;
 
-            recipeInstruction.innerHTML = "Recipe: <br>" + recipe.instructions;
-            recipeServing.innerHTML = "Serving: " + recipe.servings;
-            recipeContainer.appendChild(recipeTitle);
-            recipeContainer.appendChild(recipeIngredients);
-            recipeContainer.appendChild(recipeInstruction);
-            recipeContainer.appendChild(recipeServing);
-            resultsContainer.appendChild(recipeContainer);
-            // resultsContainer.appendChild(recipeIngredients);
-            console.log(recipeIngredients);
-          }
-        });
-        // do something with the result here
-        window.location.href = "../../results.html";
-      })
-      .catch((error) => {
-        console.error("Error: ", error);
-        // Retrieve data
-        const recipe = JSON.parse(localStorage.getItem("recipe")) || [];
-        recipe.push(result);
+//             recipeInstruction.innerHTML = "Recipe: <br>" + recipe.instructions;
+//             recipeServing.innerHTML = "Serving: " + recipe.servings;
+//             recipeContainer.appendChild(recipeTitle);
+//             recipeContainer.appendChild(recipeIngredients);
+//             recipeContainer.appendChild(recipeInstruction);
+//             recipeContainer.appendChild(recipeServing);
+//             resultsContainer.appendChild(recipeContainer);
+//             // resultsContainer.appendChild(recipeIngredients);
+//             console.log(recipeIngredients);
+//           }
+//         });
+//         // do something with the result here
+//         window.location.href = "../../results.html";
+//       })
+//       .catch((error) => {
+//         console.error("Error: ", error);
+//         // Retrieve data
+//         const recipe = JSON.parse(localStorage.getItem("recipe")) || [];
+//         recipe.push(result);
 
-        if (!recipe) {
-          console.error("No data in local storage");
-        } else {
-          console.log(recipe);
-          // handle the error here
-        }
-      });
-  }
-});
+//         if (!recipe) {
+//           console.error("No data in local storage");
+//         } else {
+//           console.log(recipe);
+//           // handle the error here
+//         }
+//       });
+//   }
+// });
