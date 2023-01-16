@@ -31,7 +31,7 @@ $("#search-button").click(function (e) {
         console.log("No Search Results");
         document.getElementById("errorText").innerHTML = "No Search Results";
       } else if (result.length > 0){
-        window.location.href = "./results.html";  
+        // window.location.href = "./results.html";  
       }
 
     })
