@@ -1,5 +1,117 @@
 //still need to work on this page to increase readability 
 
+//when page loads
+//https://www.w3schools.com/jquery/event_ready.asp
+$("document").ready(function(){
+  var result = JSON.parse(localStorage.getItem("recipe")) || [];
+  
+  var calorieResult = JSON.parse(localStorage.getItem("calories")) || {items: [],};
+
+})
+
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
+//enable to re-search again on result page, this keypress fucntion is for search only.
+$("#site-search").keypress(async function (event) {
+  var keycode = event.keyCode ? event.keyCode : event.which;
+  if (keycode === 13) {
+    event.preventDefault();
+    var searchInput = $("#site-search").val();
+
+    var recipe = await fetchRecipe(searchInput);
+      if (recipe.length > 0){
+        localStorage.setItem("recipe", JSON.stringify(recipe));
+        displayRecipe(recipe);
+      } else {
+        console.log("NO SEARCH RESULT - RECIPE")
+        document.getElementById("errorText").innerHTML = "NO SEARCH RESULT - RECIPE"
+      }
+
+      var calories = await fetchCalories(searchInput);
+      if (calories.items.length>0){
+        localStorage.setItem("calories", JSON.stringify(calories));
+        displayCalories(calories);
+      } else {
+        console.log("NO SEARCH RESULT - CALORIES")
+      }
+    }
+})
+
+// display functions to handle display only
+
+function displayRecipe(result) {
+  let resultsContainer = document.getElementById("results-card");
+}
+
+
+
+
+
+
+        }
+        return response.json();
+      })
+      .then((result) => {
+        console.log(result);
+        // Store data
+        localStorage.setItem("recipe", JSON.stringify(result));
+        let resultsContainer = document.getElementById("results-card");
+        result.forEach((recipe, i) => {
+          if (i < 6) {
+            let recipeContainer = document.createElement("div");
+            recipeContainer.className =
+              "bg-white rounded overflow-hidden shadow-md relative ";
+            let recipeTitle = document.createElement("h1");
+
+            let recipeIngredients = document.createElement("p");
+            recipeIngredients.className = "py-2";
+            let ingredientsList = recipe.ingredients.replaceAll("|", "<br>");
+            console.log(ingredientsList);
+
+            let recipeInstruction = document.createElement("p");
+            recipeInstruction.className = "py-2";
+            let recipeServing = document.createElement("p");
+            recipeTitle.innerText = "Title: " + recipe.title;
+            recipeIngredients.innerHTML = "Ingredients: <br>" + ingredientsList;
+
+            recipeInstruction.innerHTML = "Recipe: <br>" + recipe.instructions;
+            recipeServing.innerHTML = "Serving: " + recipe.servings;
+            recipeContainer.appendChild(recipeTitle);
+            recipeContainer.appendChild(recipeIngredients);
+            recipeContainer.appendChild(recipeInstruction);
+            recipeContainer.appendChild(recipeServing);
+            resultsContainer.appendChild(recipeContainer);
+            // resultsContainer.appendChild(recipeIngredients);
+            console.log(recipeIngredients);
+          }
+
+        });
+        // do something with the result here
+        // check if there are no search results the log.
+        if (result.length === 0){
+          console.log("No Search Results");
+          document.getElementById("errorText").innerHTML = "No Search Results";
+        } else if (result.length > 0){
+          window.location.href = "./results.html";  
+        }
+      })
+      .catch((error) => {
+        console.error("Error: ", error);
+        // Retrieve data
+        const recipe = JSON.parse(localStorage.getItem("recipe")) || [];
+        recipe.push(result);
+
+        if (!recipe) {
+          console.error("No data in local storage");
+        } else {
+          console.log(recipe);
+          // handle the error here
+        }
+      });
+  }
+
+});
+
 
 
 var result = JSON.parse(localStorage.getItem("recipe")) || [];
