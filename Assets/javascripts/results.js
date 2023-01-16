@@ -1,3 +1,4 @@
+
 //still need to work on this page to increase readability 
 
 //when page loads
@@ -202,13 +203,26 @@ function displayRecipe(result) {
 
 var calorieResult = JSON.parse(localStorage.getItem("calories")) || [];
 console.log(calorieResult);
+
 var name = items.name;
 console.log(name);
 
-  calorieResultContainer.appendChild(calorieTitle);
-  calorieResultContainer.appendChild(calrorieName);
-  calorieResultContainer.appendChild(calrorieNameCalories);
-}
+if (calorieResult.items.length > 0) {
+  console.log(calorieResult.items[0].name);
+  console.log(calorieResult.items[0].calories);
+
+  let calorieResultContainer = document.getElementById(
+    "calorie-result-container"
+  );
+  let calorieTitle = document.getElementById("calorie-container-title");
+  calorieTitle.innerHTML = "General Calorie Information";
+  let calrorieName = document.createElement("p");
+  calrorieName.innerText = "Name: " + calorieResult.items[0].name;
+  let calrorieNameCalories = document.createElement("p");
+  calrorieNameCalories.innerText =
+    "Calories: " + calorieResult.items[0].calories;
+
+
 
 
 // $("#site-search").keypress(function (event) {
@@ -313,7 +327,7 @@ console.log(name);
           }
         });
         // do something with the result here
-        window.location.href = "../../results.html";
+        window.location.href = "./results.html";
       })
       .catch((error) => {
         console.error("Error: ", error);
@@ -330,3 +344,36 @@ console.log(name);
       });
   }
 });
+
+
+
+// Working on the below collapse capabilities
+
+// let collapseDiv = document.createElement("div")
+// if (collapseDiv) {
+//   collapseDiv.setAttribute("class", "collapse border border-base-300 bg-base-100 rounded-box");
+// }
+// collapseDiv.tabIndex = 0
+
+// let collapseTitle = document.createElement("div")
+// collapseTitle.className = "collapse-title text-xl font-medium";
+// collapseTitle.innerHTML = "Recipe Name: "+ recipe.title + "<br>" + "<br>" + "Ingredients: " + "<br>" + "<br>" + ingredientsList;
+
+// let collapseContent = document.createElement("div");
+// collapseContent.className = "collapse-content";
+
+// let instructions = document.createElement("p")
+// instructions.innerHTML = recipe.instructions
+
+// recipeContainer.appendChild(collapseDiv);
+// collapseDiv.appendChild(collapseTitle);
+// collapseDiv.appendChild(collapseContent);
+// collapseContent.appendChild(instructions);
+// resultsContainer.appendChild(collapseDiv);
+
+// resultsContainer.appendChild(recipeIngredients);
+    // recipeContainer.appendChild(recipeServing);
+    // recipeContainer.appendChild(recipeIngredients);
+    // recipeContainer.appendChild(recipeInstruction);
+    // recipeIngredients.innerHTML = "Ingredients: <br>" + "Ingredients: " +  + ingredientsList;
+
