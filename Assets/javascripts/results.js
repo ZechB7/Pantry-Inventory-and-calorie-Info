@@ -1,3 +1,7 @@
+//still need to work on this page to increase readability 
+
+
+
 var result = JSON.parse(localStorage.getItem("recipe")) || [];
 console.log(result);
 
