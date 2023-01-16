@@ -2,7 +2,9 @@
 $("#search-button").click(async function (e) {
   e.preventDefault();
   var searchInput = $("#search-bar").val();
-  var recipe = $("#search-bar").val();
+
+  var recipe = await fetchRecipe(searchInput);
+
   if (recipe.length > 0) {
     // Store data
     localStorage.setItem("recipe", JSON.stringify(recipe));
@@ -10,7 +12,9 @@ $("#search-button").click(async function (e) {
     console.log("No Search Results");
     document.getElementById("errorText").innerHTML = "No Search Results";
   }
+
   var calories = await fetchCalories(searchInput);
+
   if (calories.items.length > 0) {
     localStorage.setItem("calories", JSON.stringify(calories));
   } else {
