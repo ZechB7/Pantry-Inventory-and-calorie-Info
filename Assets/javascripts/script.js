@@ -17,9 +17,11 @@ $("#search-button").click(async function (e) {
 
   if (calories.items.length > 0) {
     localStorage.setItem("calories", JSON.stringify(calories));
+    window.location.href = "./results.html";
   } else {
     console.log("No Search Results");
+    
   }
+  // window.location.href = "./results.html";
 
-  window.location.href = "./results.html";
 });
