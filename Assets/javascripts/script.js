@@ -20,9 +20,9 @@ $("#search-button").click(async function (e) {
     window.location.href = "./results.html";
   } else {
     console.log("No Search Results");
-    /* setTimeout(() => {
+     setTimeout(() => {
       document.location.reload();
-    }, 2000); ---- > We can add this if you want a timeout feature!! */
+    }, 2000); /*---- > We can add this if you want a timeout feature!! */
   }
   // window.location.href = "./results.html";
 
