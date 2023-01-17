@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
 #background {
-    background-color: #f3eede;
-    color: #006d77;
+    background-color: #EFEFEF;
+    color: #000000;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
@@ -10,3 +10,4 @@
     color: #559790;
     background-color: #e4e4e1;
 }
+

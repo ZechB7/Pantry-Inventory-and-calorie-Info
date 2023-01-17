@@ -8,23 +8,23 @@
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-  <link
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link
       rel="stylesheet"
       href="http://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
     />
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="./Assets/css/reset.css" />
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./Assets/css/reset.css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <link rel="stylesheet" href="./Assets/css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-  <link rel="stylesheet" href="./Assets/css/results.css" />
+    <link rel="stylesheet" href="./Assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link rel="stylesheet" href="./Assets/css/results.css" />
 
     <style type="text/tailwindcss">
       @layer utilities {
@@ -33,26 +33,21 @@
         }
       }
     </style>
- <title>QuikRecipe</title>
+  <title>QuikRecipe</title>
 
   </head>
 
   <body id="background">
-    <div id= "resultsPage" class="grid md:grid-cols-6">
+    <div id= "resultsPage" class="grid md:grid-cols-6 p-2">
       <div class="col-span-1">
-        <nav>
-          <div>
-            <h1 class="font-bold uppercase p-4 border-b border-gray-200">
-              <a href="/" class="text-blue-600 sm:text-blue-400">QuikRecipe</a>
-            </h1>
-          </div>
+        <nav class="pl-16 md:p-4">
           <ul>
-            <li>
+            <li class="pt-12">
               <a href="./index.html">
-                <span class="p-4 border-b border-gray-200 pl-1">Home</span>
+                <span class="text-3xl">Home</span>
               </a>
             </li>
-            <li class="pt-5 pb-5 pl-1">
+            <li class="pt-5 pb-5">
               <input
                 type="search"
                 id="site-search"
@@ -64,26 +59,23 @@
             <!-- error text -->
             <div>
               <h3 id="errorText"></h3>
-            </div>
-            <li>
+            </div>   
           </ul>
         </nav>
       </div>
       <main class="px-16 py-6 md:col-span-5">
 
 
-
-        <header>
-          <h2 class="md:grid flex justify-center text-6xl">Recipes</h2>
-          
+        <header class="flex justify-center">
+          <img src="./Assets/images/quikimage-removebg-preview.png" class="">          
 
         </header>
 
         <div>
 
-          <h4 class=" font-bold mt-12 pb-2 border-b border-gray-200">Latest Recipes</h4>
+          <h4 class=" font-bold mt-12 pb-8 pt-4 border-b border-gray-200">Recipe Results</h4>
     
-          <div class="mt-8 grid lg:grid-cols-3 gap-10 text-align-left" id="results-card">
+          <div class="mt-8 grid lg:grid-cols-3 gap-10 text-align-left justify-items-stretch" id="results-card">
             
             <!-- cards go here -->
             <!-- <div class="bg-white rounded overflow-hidden shadow-md relative"> 
@@ -119,13 +111,9 @@
           </div>
 
 
-          <div id="calorie-result-container" class="mt-8">
+          <div id="calorie-result-container" class="mt-8 pl-4">
           <!-- cards go here -->
           </div>
-        </div>
-
-        <div>
-          <div>Load more</div>
         </div>
       </main>
     </div>
