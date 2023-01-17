@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
 #background {
-  background-color: #f3eede;
+  background-color: #efefef;
   color:#006d77;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
@@ -26,13 +26,13 @@
 #search-bar {
   font-size: 2rem;
   color: #83c5be;
-  background-color: #e4e4e1;
+  background-color: #ffffff;
 }
 
-#search-button {
+/* #search-button {
   border: none;
   text-align: center;
   font-weight: bold;
   background-color: #00a5a7;
   font-size: 2rem;
-}
+} */
