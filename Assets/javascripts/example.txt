@@ -1,0 +1,43 @@
+var recipeTit = recipe.title
+        recipeTit.className = "text-4xl"
+    
+        let recipeTitle = document.createElement("h1");
+        recipeTitle.className = 'text-xl'
+        let recipeIngredients = document.createElement("p");
+        recipeIngredients.className = "text-align-left";
+        let recipeButton = document.createElement("button");
+        recipeButton.className = " w-full h-full px-4 py-2.5 text-start bg-blue-500 text-white font-medium text-xs leading-tight rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out collapsible";
+        recipeIngredients.className = "py-2";
+        let ingredientsList = recipe.ingredients.replaceAll("|", "<br>");
+        
+        console.log(ingredientsList);
+        
+    
+        let recipeInstruction = document.createElement("p");
+        recipeInstruction.className = "py-2";
+        let recipeServing = document.createElement("p");
+        recipeButton.innerHTML = recipeTit + " Recipe" + "<br>" + "<br>" + "Ingredients: " + "<br>" + "<br>" + ingredientsList;
+    
+        recipeInstruction.innerHTML = "Recipe: <br>" + recipe.instructions;
+        recipeServing.innerHTML = "Serving: " + recipe.servings;
+        recipeContainer.appendChild(recipeButton);
+        resultsContainer.appendChild(recipeContainer);
+        console.log(recipeIngredients);
+       
+       
+       
+<p class="md:space-x-1 space-y-1 md:space-y-0 mb-4">
+  <a class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a>
+  <button class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-bs-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="block p-6 rounded-lg shadow-lg bg-white">
+    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+  </div>
+</div>
+
+'<a class="w-full h-50 inline-block px-6 py-2.5 bg-gray-200 text-black font-medium text-xs leading-tight rounded shadow-md hover:bg-gray-400 hover:shadow-lg focus:bg-gray-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-250 ease-in-out" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">' + titleRecipe + "<br>" + "<br>"+ "Ingredients List: "+ "<br>" + "<br>" + ingredientsList +
