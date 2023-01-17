@@ -22,7 +22,7 @@ $("#search-button").click(async function (e) {
     console.log("No Search Results");
      setTimeout(() => {
       document.location.reload();
-    }, 2000); /*---- > We can add this if you want a timeout feature!! */
+    }, 1000); /*---- > We can add this if you want a timeout feature!! */
   }
   // window.location.href = "./results.html";
 

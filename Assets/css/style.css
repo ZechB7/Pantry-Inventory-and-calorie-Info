@@ -15,15 +15,8 @@
   bottom: 0;
 }
 
-#welcome-page-h1 {
-  font-size: 69px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
 #search-bar {
   font-size: 2rem;
-  color: #83c5be;
   background-color: #ffffff;
 }
 

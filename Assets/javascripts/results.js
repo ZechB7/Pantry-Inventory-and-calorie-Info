@@ -47,37 +47,21 @@ function displayRecipe(result) {
   resultsContainer.innerHTML = "";
   result.forEach((recipe, i) => {
     let recipeContainer = document.createElement("div");
-    recipeContainer.className =
-      "bg-white rounded overflow-hidden shadow-md relative";
+    let ingredientsList = recipe.ingredients.replaceAll("|", "<br>");
+    // recipeContainer.className =
+    //   "bg-white rounded overflow-hidden shadow-md relative";
       if (i < 6) {
-
-        var recipeTit = recipe.title
-        recipeTit.className = "text-4xl"
-    
-        let recipeTitle = document.createElement("h1");
-        recipeTitle.className = 'text-xl'
-        let recipeIngredients = document.createElement("p");
-        recipeIngredients.className = "text-align-left";
-        let recipeButton = document.createElement("button");
-        recipeButton.className = " w-full h-full px-4 py-2.5 text-start bg-blue-500 text-white font-medium text-xs leading-tight rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out collapsible";
-        recipeIngredients.className = "py-2";
-        let ingredientsList = recipe.ingredients.replaceAll("|", "<br>");
-        
-        console.log(ingredientsList);
-        
-    
-        let recipeInstruction = document.createElement("p");
-        recipeInstruction.className = "py-2";
-        let recipeServing = document.createElement("p");
-        recipeButton.innerHTML = recipeTit + " Recipe" + "<br>" + "<br>" + "Ingredients: " + "<br>" + "<br>" + ingredientsList;
-    
-        recipeInstruction.innerHTML = "Recipe: <br>" + recipe.instructions;
-        recipeServing.innerHTML = "Serving: " + recipe.servings;
-        recipeContainer.appendChild(recipeButton);
-        resultsContainer.appendChild(recipeContainer);
-        console.log(recipeIngredients);
-    
+        recipeContainer.innerHTML = 
+        '<p class="md:space-x-1 space-y-1 md:space-y-0 mb-4">' +
+        '<a class="w-full h-50 inline-block px-6 py-2.5 bg-gray-200 text-black font-medium text-xs leading-tight rounded shadow-md hover:bg-gray-400 hover:shadow-lg focus:bg-gray-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-250 ease-in-out" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">' + recipe.title + "<br>" + "<br>"+ "Ingredients List: "+ "<br>" + "<br>" + ingredientsList +
+        '</a>' + 
+        '<div class="collapse" id="collapseExample">' + 
+        '<div class="block p-6 rounded-lg shadow-lg bg-white">' +
+         recipe.instructions +
+        '</div>' +
+        '</div>' 
         }
+        resultsContainer.appendChild(recipeContainer);
       });
     }
     function displayCalories(calorieResult) {
