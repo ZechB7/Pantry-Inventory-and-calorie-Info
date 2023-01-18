@@ -16,7 +16,7 @@ async function fetchRecipe(searchInput) {
     headers: { "X-Api-Key": RECIPE_API_KEY },
     contentType: "application/json",
   })
-    .then((response) => {
+    .then((response) => { 
       if (!response.ok) {
         throw new Error(response.statusText);
       }
