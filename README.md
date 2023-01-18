@@ -1,6 +1,6 @@
 # QuikRecipe
 
-[Link to deployed page](https://zechb7.github.io/Pantry-Inventory-and-calorie-Info/)
+[Link to deployed page](https://zechb7.github.io/QuikRecipe/)
 
 Version: 1.0
 
