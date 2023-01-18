@@ -1,10 +1,10 @@
 # QuikRecipe
 
-(link to page)
+[Link to deployed page](https://zechb7.github.io/Pantry-Inventory-and-calorie-Info/)
 
 Version 0.1
 
-Deployment Date:
+Deployment Date: 
 
 ### Contributors:
 * **MJ Jeong** -
