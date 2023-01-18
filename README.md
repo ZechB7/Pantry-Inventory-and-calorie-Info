@@ -20,7 +20,7 @@ QuikRecipe is a simple tool for looking up recipes and accompanying nutritional 
 
 1. Navigate to [Quik Recipe](https://zechb7.github.io/Pantry-Inventory-and-calorie-Info/) in a browser.
 
-2. Enter desired recipe in the search bar then click "search".
+2. Enter desired recipe in the search bar then press enter or click "search".
 <p align="left">
   <img src="Assets/images/Instruction01.png" alt="image of search page instructions"/>
 </p>
@@ -35,7 +35,7 @@ QuikRecipe is a simple tool for looking up recipes and accompanying nutritional 
   <img src="Assets/images/Instruction03.png" alt="image of recipe details"/>
 </p>
 
-5. From the results page, you also have an option to make a new search, using the search bar in the top left.
+5. From the results page, you also have an option to make a new search, using the search bar in the top left. Use the enter key to search.
 <p align="left">
   <img src="Assets/images/Instruction04.png" alt="image of search bar location on results page"/>
 </p>
