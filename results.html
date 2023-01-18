@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,10 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-    <link
-      rel="stylesheet"
-      href="http://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
-    />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="./Assets/css/reset.css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
@@ -22,63 +20,59 @@
 
     <link rel="stylesheet" href="./Assets/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
     <link rel="stylesheet" href="./Assets/css/results.css" />
 
     <style type="text/tailwindcss">
-      @layer utilities {
+        @layer utilities {
         .content-auto {
           content-visibility: auto;
         }
       }
     </style>
-  <title>QuikRecipe</title>
+    <title>QuikRecipe</title>
 
-  </head>
+</head>
 
-  <body id="background">
-    <div id= "resultsPage" class="grid md:grid-cols-6 p-2">
-      <div class="col-span-1">
-        <nav class="pl-16 md:p-4">
-          <ul>
-            <li class="pt-12">
-              <a href="./index.html">
-                <span class="text-3xl">Home</span>
-              </a>
-            </li>
-            <li class="pt-5 pb-5">
-              <input
-                type="search"
-                id="site-search"
-                name="q"
-                placeholder="Search for new recipe!"
-                class="rounded"
-              />
-            </li>
-            <!-- error text -->
-            <div>
-              <h3 id="errorText"></h3>
-            </div>   
-          </ul>
-        </nav>
-      </div>
-      <main class="px-16 py-6 md:col-span-5">
+<body id="background">
+    <main id="resultsPage" class="grid md:grid-cols-6 p-2">
+        <aside class="col-span-1">
+            <nav class="pl-16 md:p-4">
+                <ul>
+                    <li class="pt-12">
+                        <a href="./index.html">
+                            <span class="text-3xl">Home</span>
+                        </a>
+                    </li>
+                    <li class="pt-5 pb-5">
+                        <input type="search" id="site-search" name="q" placeholder="Search for new recipe!"
+                            class="rounded" />
+                    </li>
+                    <!-- error text -->
+                    <article>
+                        <h3 id="errorText"></h3>
+                    </article>
+                </ul>
+            </nav>
+        </aside>
+        <section class="px-16 py-6 md:col-span-5">
 
 
-        <header class="flex justify-center">
-          <img src="./Assets/images/quikimage-removebg-preview.png" class="">          
+            <header class="flex justify-center">
+                <img src="./Assets/images/quikimage-removebg-preview.png" class="" alt="logo says quikRecipe with a person above holding a sausage on a fork">
 
-        </header>
+            </header>
 
-        <div>
+            <section>
 
-          <h4 class=" font-bold mt-12 pb-8 pt-4 border-b border-gray-200">Recipe Results</h4>
-    
-          <div class="mt-8 grid lg:grid-cols-3 gap-10 text-align-left justify-items-stretch" id="results-card">
-            
-            <!-- cards go here -->
-            <!-- <div class="bg-white rounded overflow-hidden shadow-md relative"> 
+                <h4 class=" font-bold mt-12 pb-8 pt-4 border-b border-gray-200">Recipe Results</h4>
+
+                <article class="mt-8 grid lg:grid-cols-3 gap-10 text-align-left justify-items-stretch" id="results-card">
+
+                           <!-- cards go here -->
+                    <!-- <div class="bg-white rounded overflow-hidden shadow-md relative"> 
               <img src="./Assets/images/taco.jpg" alt="tacos" bg-white rounded overflow-hidden shadow-md relative >
               <div class="m-4">
                 <span class="font-bold">Name of the item searched!</span>
@@ -106,19 +100,20 @@
               </div>
             <div class="top-0 bg-gray-400 rounded-md p-1 absolute top-0 ml-2 mt-2 ">
               <span>Calories: </span> -->
-            </div>
-            </div> 
-          </div>
+
+            </article>
+        </section>
+        </main>
 
 
-          <div id="calorie-result-container" class="mt-8 pl-4">
-          <!-- cards go here -->
-          </div>
-        </div>
-      </main>
+    <footer id="calorie-result-container" class="mt-8 pl-4">
+        <!-- cards go here -->
+    </footer>
+    </div>
+    </sectiion>
     </div>
 
-    <div id="results-container"></div>
+    <article id="results-container"></article>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -126,5 +121,6 @@
     <script src="./Assets/javascripts/fetch.js"></script>
     <script src="./Assets/javascripts/results.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-  </body>
+</body>
+
 </html>
